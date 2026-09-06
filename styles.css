@@ -217,7 +217,7 @@ nav {
 ----------------------------------------------------------- */
 .first-section-home {
     height: 100vh;
-    background-image: url('https://i.postimg.cc/50PNCLSJ/background.png');
+    background-image: url('IMG/background.webp');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center top;
@@ -450,7 +450,7 @@ nav {
 ----------------------------------------------------------- */
 .third-section-home {
     background-color: var(--bg);
-    background-image: url("https://i.postimg.cc/J4gwBPwK/background-II.png");
+    background-image: url('IMG/background-II.webp');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -700,8 +700,8 @@ footer p {
 }
 
 @keyframes changeBackground {
-    0%, 100% { background-image: url('https://i.postimg.cc/J4gwBPwK/background-II.png'); }
-    50%       { background-image: url('https://i.postimg.cc/50PNCLSJ/background.png'); }
+    0%, 100% { background-image: url('IMG/background-II.webp'); }
+    50%       { background-image: url('IMG/background.webp'); }
 }
 
 @keyframes slideIn {
