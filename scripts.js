@@ -26,11 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-// Google Analytics
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-N1SSRSE35X');
+
 
 // All window load logic in one place
 window.addEventListener('load', function() {
