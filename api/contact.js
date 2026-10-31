@@ -24,7 +24,9 @@ module.exports = async function handler(req, res) {
         return res.status(400).json({ success: false, message: 'Fill in your name, a valid email and a message.' });
     }
 
-    const { GMAIL_USER, GMAIL_APP_PASSWORD } = process.env;
+    // Google shows app passwords in groups with spaces; strip them along with stray whitespace
+    const GMAIL_USER = (process.env.GMAIL_USER || '').trim();
+    const GMAIL_APP_PASSWORD = (process.env.GMAIL_APP_PASSWORD || '').replace(/\s+/g, '');
     if (!GMAIL_USER || !GMAIL_APP_PASSWORD) {
         return res.status(500).json({ success: false, message: 'Email sending is not set up yet.' });
     }
