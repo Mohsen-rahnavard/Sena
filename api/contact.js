@@ -5,6 +5,31 @@
 const nodemailer = require('nodemailer');
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const SITE = 'www.senavaliani.com';
+
+function escapeHtml(text) {
+    return text.replace(/[&<>"']/g, ch => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch]));
+}
+
+// A small card in the site's colours; inline styles because email clients ignore stylesheets
+function htmlEmail(name, email, message) {
+    const label = 'font:600 10px/1.4 monospace;letter-spacing:2px;text-transform:uppercase;color:#8a857c;';
+    const value = 'font:14px/1.6 monospace;color:#1d1c1b;';
+    return `
+<div style="background:#272625;padding:24px;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:560px;margin:0 auto;background:#e4dfd3;border-top:3px solid #c9a96e;">
+    <tr><td style="padding:18px 22px;background:#1d1c1b;font:700 11px/1.4 monospace;letter-spacing:3px;text-transform:uppercase;color:#e4e2dd;">
+      Message from <a href="https://${SITE}" style="color:#c9a96e;text-decoration:none;">${SITE}</a>
+    </td></tr>
+    <tr><td style="padding:22px 22px 6px;"><div style="${label}">Name</div><div style="${value}">${escapeHtml(name)}</div></td></tr>
+    <tr><td style="padding:12px 22px 6px;"><div style="${label}">Email</div><div style="${value}"><a href="mailto:${escapeHtml(email)}" style="color:#1d1c1b;">${escapeHtml(email)}</a></div></td></tr>
+    <tr><td style="padding:12px 22px 24px;"><div style="${label}">Message</div><div style="${value}white-space:pre-wrap;">${escapeHtml(message)}</div></td></tr>
+    <tr><td style="padding:14px 22px;border-top:1px dashed #b5afa3;font:10px/1.5 monospace;color:#8a857c;">
+      Sent from the contact form on ${SITE}. Press Reply to answer ${escapeHtml(name)}.
+    </td></tr>
+  </table>
+</div>`;
+}
 
 module.exports = async function handler(req, res) {
     if (req.method !== 'POST') {
@@ -38,11 +63,12 @@ module.exports = async function handler(req, res) {
 
     try {
         await transporter.sendMail({
-            from: { name: 'Sena Valiani website', address: GMAIL_USER },
+            from: { name: SITE, address: GMAIL_USER },
             to: GMAIL_USER,
             replyTo: { name, address: email },
-            subject: `New message from ${name}`,
-            text: `${message}\n\n${name} <${email}>`
+            subject: `${SITE}: new message from ${name}`,
+            text: `Message from ${SITE}\n\nName: ${name}\nEmail: ${email}\n\n${message}\n\nSent from the contact form on ${SITE}. Press Reply to answer ${name}.`,
+            html: htmlEmail(name, email, message)
         });
         return res.status(200).json({ success: true });
     } catch (error) {
