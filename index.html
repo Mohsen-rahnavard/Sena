@@ -8,7 +8,6 @@
      <meta name="keywords" content="Sena Valiani, music, songs, playlists, artists, albums, Mohsen Rahnavard, Sena Valiani">
     <meta name="author" content="Mohsen Rahnavard">
     <meta name="author" content="Sena Valiani">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Crimson+Pro">
     <link rel="icon" href="favicon/favicon.ico">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -77,7 +76,12 @@
         </nav>
         </header>
         <section class="first-section-home">
-        <div class="name-home"> 
+        <svg class="hero-dial" viewBox="0 0 100 100" aria-hidden="true">
+            <circle class="dial-minor" cx="50" cy="50" r="46"/>
+            <circle class="dial-major" cx="50" cy="50" r="46.6"/>
+            <circle class="dial-orbit" cx="50" cy="50" r="40"/>
+        </svg>
+        <div class="name-home">
             <h1 class="text-stable">
                 <span class="animated-text">S</span>
                 <span class="animated-text">e</span>
@@ -94,16 +98,132 @@
             </h1>
         <h3 class="text-animated">Sena Valiani</h3>
         </div>
-        <div class="scroll-indicator">
-            <span></span>
-            <span></span>
+        <p class="hero-sub">Composer &amp; musician</p>
+        <div class="hero-frame">
+            <span class="hero-corner hero-tl">Sena Valiani / Mohsen Rahnavard</span>
+            <span class="hero-corner hero-tr">Pop / Ambient / Electronic / D&amp;B</span>
+            <a class="hero-corner hero-bl" href="#latest"><span class="status-led" aria-hidden="true"></span>Latest release: Sorud</a>
+            <span class="hero-corner hero-br scroll-indicator">Scroll</span>
         </div>
         </section>
-    
-        <div class="buyingSection">
-        <h2>Buy Songs Directly</h2>
-        </div>
-        <div class="second-section-home">
+
+        <section id="listen" class="listen-section">
+            <div class="section-label">
+                <h2>Listen</h2>
+            </div>
+            <div class="listen-console">
+                <div class="console-panel deck">
+                    <div class="panel-head">
+                        <span class="panel-tag">Deck 01</span>
+                        <span class="panel-hatch" aria-hidden="true"></span>
+                        <span class="panel-status"><span class="status-led" aria-hidden="true"></span>33.3 rpm</span>
+                    </div>
+                    <div class="turntable">
+                        <div class="vinyl">
+                            <img class="vinyl-label" src="IMG/Sorud.jpg" alt="Sorud cover art" loading="lazy">
+                        </div>
+                        <div class="vinyl-sheen"></div>
+                        <svg class="deck-hud" viewBox="0 0 100 100" aria-hidden="true">
+                            <circle class="hud-ticks" cx="44" cy="50" r="36.5"/>
+                            <circle class="hud-ticks-major" cx="44" cy="50" r="37"/>
+                            <path class="hud-centerline" d="M3 50H97M44 4V90"/>
+                            <path class="hud-dimension" d="M11 53V97M77 53V97M11 95H77"/>
+                            <path class="hud-arrow" d="M11 95l2.6-1.1v2.2zM77 95l-2.6-1.1v2.2z"/>
+                            <text x="44" y="93.4">Ø 12 IN</text>
+                        </svg>
+                        <div class="tonearm"></div>
+                        <div class="tonearm-base"></div>
+                    </div>
+                    <dl class="deck-readout">
+                        <div><dt>Title</dt><dd>Sorud</dd></div>
+                        <div><dt>Released</dt><dd>Mar 2024</dd></div>
+                        <div><dt>Length</dt><dd>02:33</dd></div>
+                        <div><dt>Words</dt><dd>H. Mosadegh</dd></div>
+                    </dl>
+                </div>
+
+                <div class="console-panel channels">
+                    <div class="panel-head">
+                        <span class="panel-tag">Channels</span>
+                        <span class="panel-hatch" aria-hidden="true"></span>
+                        <span class="panel-status">07 outputs</span>
+                    </div>
+                    <ul class="platform-list">
+                        <li>
+                            <a class="platform" href="https://open.spotify.com/artist/6gJNin3UtujuMVNb1FAQD9?si=MEGcTsJDT9aTag2s4YKpFg" target="_blank">
+                                <span class="platform-code" aria-hidden="true">CH.01</span>
+                                <i class="fab fa-spotify" aria-hidden="true"></i>
+                                <span class="platform-name">Spotify</span>
+                                <span class="platform-action">Stream</span>
+                                <span class="platform-meter" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="platform" href="https://music.apple.com/us/artist/mohsen-rahnavard/1574919838" target="_blank">
+                                <span class="platform-code" aria-hidden="true">CH.02</span>
+                                <i class="fab fa-apple" aria-hidden="true"></i>
+                                <span class="platform-name">Apple Music</span>
+                                <span class="platform-action">Stream</span>
+                                <span class="platform-meter" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="platform" href="https://www.youtube.com/channel/UC4SmXhMjbfs_A3PsCUzouIg" target="_blank">
+                                <span class="platform-code" aria-hidden="true">CH.03</span>
+                                <i class="fab fa-youtube" aria-hidden="true"></i>
+                                <span class="platform-name">YouTube</span>
+                                <span class="platform-action">Watch</span>
+                                <span class="platform-meter" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="platform" href="https://soundcloud.com/senavaliani" target="_blank">
+                                <span class="platform-code" aria-hidden="true">CH.04</span>
+                                <i class="fab fa-soundcloud" aria-hidden="true"></i>
+                                <span class="platform-name">SoundCloud</span>
+                                <span class="platform-action">Stream</span>
+                                <span class="platform-meter" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="platform" href="https://soundcloud.com/sena-valiani" target="_blank">
+                                <span class="platform-code" aria-hidden="true">CH.05</span>
+                                <i class="fab fa-soundcloud" aria-hidden="true"></i>
+                                <span class="platform-name">SoundCloud <span class="platform-note">Persian</span></span>
+                                <span class="platform-action">Stream</span>
+                                <span class="platform-meter" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="platform" href="https://senavaliani.bandcamp.com/" target="_blank">
+                                <span class="platform-code" aria-hidden="true">CH.06</span>
+                                <i class="fab fa-bandcamp" aria-hidden="true"></i>
+                                <span class="platform-name">Bandcamp</span>
+                                <span class="platform-action">Buy &amp; download</span>
+                                <span class="platform-meter" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="platform" href="https://music.amazon.com/artists/B098KJ2N15/mohsen-rahnavard" target="_blank">
+                                <span class="platform-code" aria-hidden="true">CH.07</span>
+                                <i class="fab fa-amazon" aria-hidden="true"></i>
+                                <span class="platform-name">Amazon Music</span>
+                                <span class="platform-action">Stream</span>
+                                <span class="platform-meter" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="spectrum" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+                    <p class="channels-hint">Select a channel to listen<span class="cursor" aria-hidden="true">_</span></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="buy-section">
+            <div class="buyingSection">
+                <h2>Buy Songs Directly</h2>
+            </div>
+            <div class="second-section-home">
         <div class="photo-grid">
         <div class="photo-item">
             <a href="https://senavaliani.bandcamp.com/track/soroud" target="_blank"><img class="fade-blur-image" src="IMG/Sorud.jpg" alt="Sorud Cover album" loading="lazy">
@@ -176,43 +296,131 @@
         </div>
 
         </div>
-    
+            </div>
         </section>
-        <section class="third-section-home">
-        <div class="lastReleasedPhoto">
-            <img class="fade-blur-image" src="IMG/Sorud.jpg" alt="Sorud cover photo" loading="lazy">
-        </div>
-        <div class="audio-section">
-            <h2>Sorud</h2>
-            <p>Last Released</p>
-            <audio controls><source src="audio.mp3" type="audio/mp3"></audio>
-        </div>
+        <section id="latest" class="third-section-home">
+            <div class="release-sleeve">
+                <div class="release-vinyl" aria-hidden="true"></div>
+                <img class="release-cover fade-blur-image" src="IMG/Sorud.jpg" alt="Sorud cover art" loading="lazy">
+            </div>
+            <div class="console-panel release-panel">
+                <div class="panel-head">
+                    <span class="panel-tag">Last released</span>
+                    <span class="panel-hatch" aria-hidden="true"></span>
+                    <span class="panel-status">Track / 2024</span>
+                </div>
+                <div class="release-body">
+                    <h2 class="release-title">Sorud</h2>
+                    <dl class="deck-readout release-credits">
+                        <div><dt>Released</dt><dd>March 2024</dd></div>
+                        <div><dt>Length</dt><dd>02:33</dd></div>
+                        <div><dt>Music</dt><dd>Mohsen Rahnavard</dd></div>
+                        <div><dt>Words</dt><dd>Hamid Mosadegh</dd></div>
+                    </dl>
+                    <div class="release-wave" aria-hidden="true"></div>
+                    <audio controls><source src="audio.mp3" type="audio/mp3"></audio>
+                    <div class="release-links">
+                        <a href="https://senavaliani.bandcamp.com/track/soroud" target="_blank">Buy on Bandcamp</a>
+                        <a href="#listen">All platforms</a>
+                    </div>
+                </div>
+            </div>
         </section>
-        <section id="event" class="second-section-home-container">
+        <section id="about" class="about-section">
+            <div class="section-label">
+                <h2>About</h2>
+            </div>
+            <div class="about-sheet">
+                <div class="about-plate">
+                    <div class="plate-head">
+                        <span>Fig. 01</span>
+                        <span>SV-01 / Portrait</span>
+                    </div>
+                    <div class="plate-figure">
+                        <img class="about-portrait fade-blur-image" src="IMG/1.webp" alt="Sena Valiani standing against a stone wall" loading="lazy">
+                    </div>
+                    <div class="plate-foot">
+                        <span class="barcode" aria-hidden="true"></span>
+                        <span>ID 1574919838</span>
+                    </div>
+                </div>
+                <div class="console-panel about-file">
+                    <canvas class="topo" aria-hidden="true"></canvas>
+                    <h3 class="about-name">Sena<br>Valiani</h3>
+                    <dl class="about-specs">
+                        <div><dt>Name</dt><dd>Mohsen Rahnavard</dd></div>
+                        <div><dt>Role</dt><dd>Composer, musician, AI & Digital Solutions Developer</dd></div>
+                        <div><dt>Genres</dt><dd>Orchestral / Ambient / Electronic</dd></div>
+                        <div><dt>Latest</dt><dd>Sorud, March 2024</dd></div>
+                        
+                    </dl>
+                    <div class="about-log">
+                        <!-- Placeholder biography: replace with the real one -->
+                        <p>Sena Valiani (Mohsen Rahnavard)
+
+Born in 1987 in Esfahan, Iran, I began my musical journey at the age of seven, starting with traditional Iranian vocal music. Over the years, my curiosity led me to explore traditional Iranian instruments, including the Setar and Tar.
+
+During my teenage years, my musical interests gradually expanded beyond traditional Iranian music. I became increasingly drawn to international genres, particularly orchestral music and jazz. At the age of sixteen, I picked up the guitar, an instrument that would become the foundation of my musical identity and shape much of my life.
+
+A few years later, I began teaching guitar and singing. Alongside teaching, I started recording and independently releasing music from time to time. These releases were often driven by personal expression and experimentation rather than a specific commercial goal or target audience. Creating and sharing music simply became a natural part of my life.
+
+At the age of thirty, I moved to Amsterdam, the Netherlands, where I continued teaching music while gradually exploring a new creative direction: technology. My growing interest in digital tools led me into the world of digital product design and development, allowing me to combine creativity, technical thinking, and problem-solving in a new professional path.
+
+Today, my journey moves between music, technology, and design — three disciplines that continue to influence the way I think, create, and approach the world.</p>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+<section id="event" class="second-section-home-container">
             <div class="section-label">
                 <h2>Event</h2>
             </div>
             <div class="second-section-event">
-                <div class="event-items">
-                    <p>Music Festival</p>
-                    <h1>Klaterklanken</h1>
-                    <p>July</p>
-                    <p>Arnhem - Utrecht - Haarlem</p>
-                    <img class="event-photos fade-blur-image" src="IMG/mezrab.webp" alt="Festival photo" loading="lazy">
-                </div>
-                <div class="event-items">
-                    <p>Mezjam</p>
-                    <h1>Mezrab</h1>
-                    <p>June</p>
-                    <img class="event-photos fade-blur-image" src="IMG/festival1.webp" alt="Festival photo" loading="lazy">
-                </div>
-                <div class="event-items">
-                    <p>Music Festival</p>
-                    <h1>Klaterklanken</h1>
-                    <p>July</p>
-                    <p>Arnhem - Utrecht - Haarlem</p>
-                    <img class="event-photos fade-blur-image" src="IMG/festival2.webp" alt="Festival photo" loading="lazy">
-                </div>
+                <article class="ticket">
+                    <div class="ticket-photo">
+                        <img class="event-photos fade-blur-image" src="IMG/mezrab.webp" alt="Festival photo" loading="lazy">
+                        <span class="ticket-type">Music festival</span>
+                    </div>
+                    <div class="ticket-body">
+                        <div class="ticket-row"><span>Live</span><span>No. 01</span></div>
+                        <h3 class="ticket-title">Klaterklanken</h3>
+                        <dl class="ticket-meta">
+                            <div><dt>Month</dt><dd>July</dd></div>
+                            <div><dt>Cities</dt><dd>Arnhem / Utrecht / Haarlem</dd></div>
+                        </dl>
+                        <span class="barcode" aria-hidden="true"></span>
+                    </div>
+                </article>
+                <article class="ticket">
+                    <div class="ticket-photo">
+                        <img class="event-photos fade-blur-image" src="IMG/festival1.webp" alt="Festival photo" loading="lazy">
+                        <span class="ticket-type">Mezjam</span>
+                    </div>
+                    <div class="ticket-body">
+                        <div class="ticket-row"><span>Live</span><span>No. 02</span></div>
+                        <h3 class="ticket-title">Mezrab</h3>
+                        <dl class="ticket-meta">
+                            <div><dt>Month</dt><dd>June</dd></div>
+                        </dl>
+                        <span class="barcode" aria-hidden="true"></span>
+                    </div>
+                </article>
+                <article class="ticket">
+                    <div class="ticket-photo">
+                        <img class="event-photos fade-blur-image" src="IMG/festival2.webp" alt="Festival photo" loading="lazy">
+                        <span class="ticket-type">Music festival</span>
+                    </div>
+                    <div class="ticket-body">
+                        <div class="ticket-row"><span>Live</span><span>No. 03</span></div>
+                        <h3 class="ticket-title">Klaterklanken</h3>
+                        <dl class="ticket-meta">
+                            <div><dt>Month</dt><dd>July</dd></div>
+                            <div><dt>Cities</dt><dd>Arnhem / Utrecht / Haarlem</dd></div>
+                        </dl>
+                        <span class="barcode" aria-hidden="true"></span>
+                    </div>
+                </article>
             </div>
         </section>
 
@@ -231,6 +439,5 @@
         <footer>
         <p>&copy; 2025 Sena Valiani. All Rights Reserved.</p>
         </footer>
-    </div>
 </body>
 </html>
