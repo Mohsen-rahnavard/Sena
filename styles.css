@@ -1709,6 +1709,125 @@ header::before {
     pointer-events: none;
 }
 
+/* Contact form */
+.contact-form {
+    width: min(100%, 640px);
+    margin: 0 0 44px;
+    text-align: left;
+}
+
+.contact-form .status-led {
+    background: var(--accent);
+    box-shadow: 0 0 10px rgba(201, 169, 110, 0.8);
+}
+
+.form-body {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 22px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-field span {
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-soft);
+}
+
+.form-field input,
+.form-field textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid var(--line);
+    border-radius: 0;
+    background: var(--screen);
+    color: var(--text);
+    font: inherit;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.form-field textarea {
+    min-height: 130px;
+    line-height: 1.6;
+    resize: vertical;
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(201, 169, 110, 0.15);
+}
+
+/* Hidden spam trap: bots tick it, people never see it */
+.form-trap {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.form-foot {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.form-status {
+    margin: 0;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--text-soft);
+}
+
+.form-status.is-sent { color: var(--accent); }
+.form-status.is-error { color: #e08a6d; }
+
+.contact-form button {
+    margin-left: auto;
+    padding: 13px 22px;
+    border: 1px solid var(--text);
+    background: var(--text);
+    color: var(--ink);
+    font: inherit;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background var(--transition), border-color var(--transition);
+}
+
+.contact-form button:hover,
+.contact-form button:focus-visible {
+    background: var(--accent);
+    border-color: var(--accent);
+}
+
+.contact-form button:disabled {
+    opacity: 0.6;
+    cursor: progress;
+}
+
 .social-icons {
     display: flex;
     gap: 18px;
@@ -1918,6 +2037,9 @@ footer p {
     .about-log { font-size: 13px; }
 
     .contact-section { padding: 0 16px 60px; --signal-y: calc(100% - 84px); }
+    .contact-form { margin-bottom: 36px; }
+    .form-body { padding: 16px 14px 18px; }
+    .form-row { grid-template-columns: 1fr; }
 
     .social-icons { gap: 12px; }
 

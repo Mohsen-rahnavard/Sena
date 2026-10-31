@@ -269,6 +269,41 @@ function buildReleaseWave() {
     });
 }
 
+// Contact form: posts to api/contact.js, so the email address never appears on the page
+function setupContactForm() {
+    const form = document.querySelector('.contact-form');
+    if (!form) return;
+
+    const status = form.querySelector('.form-status');
+    const button = form.querySelector('button[type="submit"]');
+
+    form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        button.disabled = true;
+        status.className = 'form-status';
+        status.textContent = 'Sending…';
+
+        try {
+            const response = await fetch(form.action, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+                body: JSON.stringify(Object.fromEntries(new FormData(form)))
+            });
+            const result = await response.json();
+            if (!result.success) throw new Error(result.message);
+
+            form.reset();
+            status.classList.add('is-sent');
+            status.textContent = 'Message sent. Thanks, I will reply by email.';
+        } catch (error) {
+            status.classList.add('is-error');
+            status.textContent = 'Message not sent. Check your connection and try again.';
+        } finally {
+            button.disabled = false;
+        }
+    });
+}
+
 // All window load logic in one place
 window.addEventListener('load', function() {
     // Fade-in effect
@@ -285,4 +320,5 @@ window.addEventListener('load', function() {
     playTurntable();
     drawTopography();
     buildReleaseWave();
+    setupContactForm();
 });

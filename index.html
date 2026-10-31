@@ -428,10 +428,29 @@ Today, my journey moves between music, technology, and design — three discipli
             <div class="section-label">
                 <h2>Contact</h2>
             </div>
+            <!-- Sent by api/contact.js on Vercel, so the email address never appears on the page -->
+            <form class="console-panel contact-form" action="/api/contact" method="POST">
+                <div class="panel-head">
+                    <span class="panel-tag">Message</span>
+                    <span class="panel-hatch" aria-hidden="true"></span>
+                    <span class="panel-status"><span class="status-led" aria-hidden="true"></span>Channel open</span>
+                </div>
+                <div class="form-body">
+                    <input type="checkbox" name="botcheck" class="form-trap" tabindex="-1" autocomplete="off" aria-hidden="true">
+                    <div class="form-row">
+                        <label class="form-field"><span>Name</span><input type="text" name="name" required autocomplete="name"></label>
+                        <label class="form-field"><span>Your email</span><input type="email" name="email" required autocomplete="email"></label>
+                    </div>
+                    <label class="form-field"><span>Message</span><textarea name="message" rows="5" required></textarea></label>
+                    <div class="form-foot">
+                        <p class="form-status" role="status" aria-live="polite"></p>
+                        <button type="submit">Send message</button>
+                    </div>
+                </div>
+            </form>
             <div class="social-icons">
                 <a href="https://www.instagram.com/sena_valiani/" target="_blank"><i class="fab fa-instagram"></i></a>
                 <a href="https://www.facebook.com/sena.valiani" target="_blank"><i class="fab fa-facebook"></i></a>
-                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=senavaliani@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
                 <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
             </div>
         </section>

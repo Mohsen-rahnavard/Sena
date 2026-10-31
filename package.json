@@ -1,0 +1,8 @@
+{
+  "name": "sena-valiani-site",
+  "private": true,
+  "description": "Sena Valiani website: static pages plus the /api/contact function on Vercel",
+  "dependencies": {
+    "nodemailer": "^6.9.16"
+  }
+}
