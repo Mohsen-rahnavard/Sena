@@ -47,6 +47,7 @@ module.exports = async function handler(req, res) {
         return res.status(200).json({ success: true });
     } catch (error) {
         console.error('Contact form email failed:', error);
-        return res.status(502).json({ success: false, message: 'The message could not be sent.' });
+        // The code (e.g. EAUTH for a rejected login) says why without exposing anything private
+        return res.status(502).json({ success: false, message: 'The message could not be sent.', code: error.code || 'UNKNOWN' });
     }
 };
